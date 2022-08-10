@@ -42,12 +42,8 @@ const Homepage = () => {
             <Tab width="50%">Sign Up</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel>
-              <p>one!</p>
-            </TabPanel>
-            <TabPanel>
-              <p>two!</p>
-            </TabPanel>
+            <TabPanel>{/* <Login/> */}</TabPanel>
+            <TabPanel>{/* <Signup/> */}</TabPanel>
           </TabPanels>
         </Tabs>
       </Box>

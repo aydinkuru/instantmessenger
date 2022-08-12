@@ -2,4 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get();
+// router.route('/').post(registerUser)
+// router.post('/login',authUser)
+
+module.exports = router;

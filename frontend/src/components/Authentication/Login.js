@@ -1,14 +1,8 @@
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputRightElement,
-  VStack,
-} from "@chakra-ui/react";
-import React from "react";
-import { useState } from "react";
+import { Button } from "@chakra-ui/button";
+import { FormControl, FormLabel } from "@chakra-ui/form-control";
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
+import { VStack } from "@chakra-ui/layout";
+import React, { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -36,6 +30,7 @@ const Login = () => {
       setLoading(false);
       return;
     }
+
     // console.log(email, password);
     try {
       const config = {
@@ -43,6 +38,7 @@ const Login = () => {
           "Content-type": "application/json",
         },
       };
+
       const { data } = await axios.post(
         "/api/user/login",
         { email, password },
@@ -57,7 +53,6 @@ const Login = () => {
         isClosable: true,
         position: "bottom",
       });
-
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
       history.push("/chats");
@@ -105,13 +100,13 @@ const Login = () => {
       <Button
         colorScheme="blue"
         width="100%"
+        color="white"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
         isLoading={loading}
       >
         Login
       </Button>
-
       <Button
         variant="solid"
         colorScheme="red"

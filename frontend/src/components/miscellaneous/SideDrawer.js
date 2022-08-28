@@ -1,4 +1,5 @@
 import { Box } from "@chakra-ui/layout";
+import { Tooltip } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 const SideDrawer = () => {
@@ -9,7 +10,10 @@ const SideDrawer = () => {
 
   return (
     <>
-      <Box></Box>;
+      <Box>
+        <Tooltip></Tooltip>
+      </Box>
+      ;
     </>
   );
 };

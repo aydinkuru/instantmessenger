@@ -13,7 +13,7 @@ const SideDrawer = () => {
     <>
       <Box>
         <Tooltip label="Search Users to chat" hasArrow placemenet="bottom-end">
-          <Button variant=""></Button>
+          <Button variant="ghost"></Button>
         </Tooltip>
       </Box>
       ;

@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/layout";
 import { Tooltip } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/button";
 import React, { useState } from "react";
 
 const SideDrawer = () => {

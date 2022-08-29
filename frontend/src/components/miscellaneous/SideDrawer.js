@@ -11,7 +11,9 @@ const SideDrawer = () => {
   return (
     <>
       <Box>
-        <Tooltip></Tooltip>
+        <Tooltip label="Search Users to chat" hasArrow placemenet="bottom-end">
+          <Button variant=""></Button>
+        </Tooltip>
       </Box>
       ;
     </>

@@ -13,7 +13,9 @@ const SideDrawer = () => {
     <>
       <Box>
         <Tooltip label="Search Users to chat" hasArrow placemenet="bottom-end">
-          <Button variant="ghost"></Button>
+          <Button variant="ghost">
+            <i class="fas fa-search"></i>
+          </Button>
         </Tooltip>
       </Box>
       ;

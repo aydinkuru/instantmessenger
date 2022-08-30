@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/layout";
+import { Box, Text } from "@chakra-ui/layout";
 import { Tooltip } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/button";
 import React, { useState } from "react";
@@ -15,6 +15,7 @@ const SideDrawer = () => {
         <Tooltip label="Search Users to chat" hasArrow placemenet="bottom-end">
           <Button variant="ghost">
             <i class="fas fa-search"></i>
+            <Text></Text>
           </Button>
         </Tooltip>
       </Box>

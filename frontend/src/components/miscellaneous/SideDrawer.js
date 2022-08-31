@@ -15,9 +15,15 @@ const SideDrawer = () => {
         <Tooltip label="Search Users to chat" hasArrow placemenet="bottom-end">
           <Button variant="ghost">
             <i class="fas fa-search"></i>
-            <Text d={{ base: "none", md: "flex" }}>Search User</Text>
+            <Text d={{ base: "none", md: "flex" }} px="4">
+              Search User
+            </Text>
           </Button>
         </Tooltip>
+
+        <Text fontSize="2x1" fontFamily="Work sans">
+          Instant Messenger
+        </Text>
       </Box>
       ;
     </>

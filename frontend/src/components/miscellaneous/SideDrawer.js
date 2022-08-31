@@ -1,5 +1,6 @@
 import { Box, Text } from "@chakra-ui/layout";
-import { Tooltip } from "@chakra-ui/react";
+import { Menu, MenuButton, Tooltip } from "@chakra-ui/react";
+import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/button";
 import React, { useState } from "react";
 
@@ -24,6 +25,13 @@ const SideDrawer = () => {
         <Text fontSize="2x1" fontFamily="Work sans">
           Instant Messenger
         </Text>
+        <div>
+          <Menu>
+            <MenuButton p={1}>
+              <BellIcon />
+            </MenuButton>
+          </Menu>
+        </div>
       </Box>
       ;
     </>

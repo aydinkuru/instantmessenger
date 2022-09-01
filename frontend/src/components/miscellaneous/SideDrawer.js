@@ -2,6 +2,7 @@ import { Box, Text } from "@chakra-ui/layout";
 import { Menu, MenuButton, Tooltip } from "@chakra-ui/react";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/button";
+import { Avatar } from "@chakra-ui/avatar";
 import React, { useState } from "react";
 
 const SideDrawer = () => {
@@ -31,6 +32,11 @@ const SideDrawer = () => {
               <BellIcon fontSize="2x1" m={1} />
             </MenuButton>
             {/* <MenuList></MenuList> */}
+          </Menu>
+          <Menu>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+              <Avatar size="sm" cursor="pointer" />
+            </MenuButton>
           </Menu>
         </div>
       </Box>

@@ -28,8 +28,9 @@ const SideDrawer = () => {
         <div>
           <Menu>
             <MenuButton p={1}>
-              <BellIcon />
+              <BellIcon fontSize="2x1" m={1} />
             </MenuButton>
+            {/* <MenuList></MenuList> */}
           </Menu>
         </div>
       </Box>

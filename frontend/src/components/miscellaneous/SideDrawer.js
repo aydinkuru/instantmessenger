@@ -35,7 +35,7 @@ const SideDrawer = () => {
           </Menu>
           <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-              <Avatar size="sm" cursor="pointer" />
+              <Avatar size="sm" cursor="pointer" name={user.name} />
             </MenuButton>
           </Menu>
         </div>

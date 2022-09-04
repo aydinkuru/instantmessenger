@@ -2,6 +2,7 @@ import { Box, Text } from "@chakra-ui/layout";
 import {
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
   Tooltip,
@@ -56,6 +57,7 @@ const SideDrawer = () => {
             </MenuButton>
             <MenuList>
               <MenuItem>My Profile</MenuItem>
+              <MenuDivider />
               <MenuItem>Logout</MenuItem>
             </MenuList>
           </Menu>

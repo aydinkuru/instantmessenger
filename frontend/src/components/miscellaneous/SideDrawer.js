@@ -1,5 +1,9 @@
 import { Box, Text } from "@chakra-ui/layout";
 import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
   Menu,
   MenuButton,
   MenuDivider,
@@ -14,6 +18,7 @@ import React, { useState } from "react";
 import { ChatState } from "../../Context/ChatProvider";
 import ProfileModal from "./ProfileModal";
 import { useHistory } from "react-router-dom";
+import { useDisclosure } from "@chakra-ui/hooks";
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");
@@ -23,6 +28,7 @@ const SideDrawer = () => {
 
   const { user } = ChatState();
   const history = useHistory();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
@@ -78,6 +84,13 @@ const SideDrawer = () => {
           </Menu>
         </div>
       </Box>
+
+      <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
+        </DrawerContent>
+      </Drawer>
     </>
   );
 };

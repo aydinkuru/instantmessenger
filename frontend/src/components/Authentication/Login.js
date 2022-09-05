@@ -2,20 +2,20 @@ import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
+  const toast = useToast();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
 
-  const toast = useToast();
   const history = useHistory();
-  const handleClick = () => setShow(!show);
 
   const submitHandler = async () => {
     setLoading(true);
@@ -75,6 +75,7 @@ const Login = () => {
         <FormLabel>Email</FormLabel>
         <Input
           value={email}
+          type="email"
           placeholder="Enter Your Email"
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -82,12 +83,12 @@ const Login = () => {
 
       <FormControl id="password" isRequired>
         <FormLabel>Password</FormLabel>
-        <InputGroup>
+        <InputGroup size="md">
           <Input
-            type={show ? "text" : "password"}
-            placeholder="Enter Your Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            type={show ? "text" : "password"}
+            placeholder="Enter Your Password"
           />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>

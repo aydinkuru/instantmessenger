@@ -1,15 +1,19 @@
 import { Box, Text } from "@chakra-ui/layout";
 import {
   Drawer,
+  DrawerBody,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  Input,
   Menu,
   MenuButton,
   MenuDivider,
   MenuItem,
   MenuList,
+  Toast,
   Tooltip,
+  useToast,
 } from "@chakra-ui/react";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/button";
@@ -35,10 +39,25 @@ const SideDrawer = () => {
     history.pushState("/");
   };
 
+  const toast = useToast();
+
+  const handleSearch = () => {
+    if (!search) {
+      toast({
+        title: "Please Enter something in search",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top-left",
+      });
+      return;
+    }
+  };
+
   return (
     <>
       <Box
-        d="flex"
+        display="flex"
         justifyContent="space-between"
         alignItems="center"
         bg="white"
@@ -46,7 +65,7 @@ const SideDrawer = () => {
         p="5px 10px 5px 10px"
         borderWidth="5px"
       >
-        <Tooltip label="Search Users to chat" hasArrow placemenet="bottom-end">
+        <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button variant="ghost" onClick={onOpen}>
             <i class="fas fa-search"></i>
             <Text d={{ base: "none", md: "flex" }} px="4">
@@ -56,7 +75,7 @@ const SideDrawer = () => {
         </Tooltip>
 
         <Text fontSize="2x1" fontFamily="Work sans">
-          Instant Messenger
+          HelloU
         </Text>
         <div>
           <Menu>
@@ -89,6 +108,17 @@ const SideDrawer = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
+          <DrawerBody>
+            <Box display="flex" pb={2}>
+              <Input
+                placeholder="Search by name or email"
+                mr={2}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+              <Button onClick={handleSearch}>Go</Button>
+            </Box>
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
     </>

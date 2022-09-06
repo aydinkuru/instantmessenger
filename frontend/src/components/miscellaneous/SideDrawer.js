@@ -24,6 +24,7 @@ import ProfileModal from "./ProfileModal";
 import { useHistory } from "react-router-dom";
 import { useDisclosure } from "@chakra-ui/hooks";
 import axios from "axios";
+import ChatLoading from "./ChatLoading";
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");
@@ -37,7 +38,7 @@ const SideDrawer = () => {
 
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
-    history.pushState("/");
+    history.push("/");
   };
 
   const toast = useToast();
@@ -79,6 +80,7 @@ const SideDrawer = () => {
     }
   };
 
+  const accessChat = (userId) => {};
   return (
     <>
       <Box
@@ -143,6 +145,17 @@ const SideDrawer = () => {
               />
               <Button onClick={handleSearch}>Go</Button>
             </Box>
+            {loading ? (
+              <ChatLoading />
+            ) : (
+              searchResult?.map((user) => (
+                <UserListItem
+                  key={user._id}
+                  user={user}
+                  handleFunction={() => accessChat(user._id)}
+                />
+              ))
+            )}
           </DrawerBody>
         </DrawerContent>
       </Drawer>

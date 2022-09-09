@@ -25,6 +25,7 @@ import { useHistory } from "react-router-dom";
 import { useDisclosure } from "@chakra-ui/hooks";
 import axios from "axios";
 import ChatLoading from "./ChatLoading";
+import UserListItem from "../UserAvatar/UserListItem";
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");
@@ -151,7 +152,6 @@ const SideDrawer = () => {
               searchResult?.map((user) => (
                 <UserListItem
                   key={user._id}
-                  user={user}
                   handleFunction={() => accessChat(user._id)}
                 />
               ))

@@ -3,9 +3,7 @@ import { Box, Text } from "@chakra-ui/layout";
 import React from "react";
 import { ChatState } from "../../Context/ChatProvider";
 
-const UserListItem = ({ handleFunction }) => {
-  const { user } = ChatState();
-
+const UserListItem = ({ user, handleFunction }) => {
   return (
     <Box
       onClick={handleFunction}

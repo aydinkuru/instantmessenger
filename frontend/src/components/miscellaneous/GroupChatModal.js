@@ -1,6 +1,8 @@
 import { useDisclosure } from "@chakra-ui/hooks";
 import {
   Button,
+  FormControl,
+  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -37,8 +39,18 @@ const GroupChatModal = ({ children }) => {
             Create Group Chat
           </ModalHeader>
           <ModalCloseButton />
-          <ModalBody></ModalBody>
-
+          <ModalBody
+            display="flex"
+            flexDir="column"
+            alignItems="center"
+          ></ModalBody>
+          <FormControl>
+            <Input
+              placeholder="Chat Name"
+              mb={3}
+              onChange={(e) => setGroupChatName(e.target.value)}
+            />
+          </FormControl>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close

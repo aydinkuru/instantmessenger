@@ -28,7 +28,14 @@ const GroupChatModal = ({ children }) => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader
+            fontSize="35px"
+            fontfamily="Work sans"
+            display="flex"
+            justifyContent="center"
+          >
+            Create Group Chat
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody></ModalBody>
 

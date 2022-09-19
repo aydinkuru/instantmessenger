@@ -51,6 +51,7 @@ const GroupChatModal = ({ children }) => {
               onChange={(e) => setGroupChatName(e.target.value)}
             />
           </FormControl>
+          {/* selected users */}
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close

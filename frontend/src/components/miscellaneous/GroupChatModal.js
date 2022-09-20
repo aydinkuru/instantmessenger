@@ -13,6 +13,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { ChatState } from "../../Context/ChatProvider";
 
 const GroupChatModal = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -23,6 +24,10 @@ const GroupChatModal = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   const toast = useToast();
+
+  const { user, charts, setChats } = ChatState();
+
+  const handleSearch = () => {};
   return (
     <>
       <span onClick={onOpen}>{children}</span>

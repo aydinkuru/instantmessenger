@@ -20,7 +20,7 @@ const Signup = () => {
   const [confirmpassword, setConfirmpassword] = useState();
   const [password, setPassword] = useState();
   const [pic, setPic] = useState();
-  const [loading, setLoading] = useState(false);
+  const [picLoading, setPicLoading] = useState(false);
   const toast = useToast();
   const history = useHistory();
 
@@ -66,13 +66,13 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
-      setLoading(false);
+      setPicLoading(false);
       return;
     }
   };
 
   const submitHandler = async () => {
-    setLoading(true);
+    setPicLoading(true);
     if (!name || !email || !password || !confirmpassword) {
       toast({
         title: "Please Fill all the Fields",
@@ -81,7 +81,7 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
-      setLoading(false);
+      setPicLoading(false);
       return;
     }
     if (password !== confirmpassword) {

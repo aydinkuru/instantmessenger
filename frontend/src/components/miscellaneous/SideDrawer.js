@@ -73,7 +73,7 @@ const SideDrawer = () => {
     } catch (error) {
       toast({
         title: "Error Occured!",
-        description: "Faiked to Load the search Results",
+        description: "Failed to Load the search Results",
         status: "error",
         duration: 5000,
         isClosable: true,

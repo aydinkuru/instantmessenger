@@ -70,17 +70,16 @@ const Login = () => {
   };
 
   return (
-    <VStack spacing="5px" color="black">
+    <VStack spacing="10px" color="black">
       <FormControl id="email" isRequired>
-        <FormLabel>Email</FormLabel>
+        <FormLabel>Email Adress</FormLabel>
         <Input
           value={email}
           type="email"
-          placeholder="Enter Your Email"
+          placeholder="Enter Your Email Adress"
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
-
       <FormControl id="password" isRequired>
         <FormLabel>Password</FormLabel>
         <InputGroup size="md">

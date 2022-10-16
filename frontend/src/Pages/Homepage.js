@@ -35,7 +35,6 @@ const Homepage = () => {
         borderWidth="1px"
       >
         <Text fontSize="4xl" fontFamily="Work sans" color="black">
-          {" "}
           HelloU
         </Text>
       </Box>
@@ -47,7 +46,7 @@ const Homepage = () => {
         color="black"
         borderWidth="1px"
       >
-        <Tabs variant="soft-rounded" colorScheme="green">
+        <Tabs isFitted variant="soft-rounded" colorScheme="green">
           <TabList mb="1em">
             <Tab width="50%">Login</Tab>
             <Tab width="50%">Sign Up</Tab>
